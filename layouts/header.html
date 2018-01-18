@@ -1,0 +1,17 @@
+{{#require}}nav.html{{/require}}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image:{{#usePage}}url('{{page.intro}}'){{/usePage}}{{^usePage}}url('{{site.template.path}}img/home-bg.jpg'){{/usePage}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>
+                        {{#usePage}}{{page.title}}{{/usePage}}{{^usePage}}{{site.title}}{{/usePage}}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{#usePage}}{{page.description}}{{/usePage}}{{^usePage}}{{site.description}}{{/usePage}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
