@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Test</title>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/overlay.js"></script>
+    <!-- pace-loader --->
+    <script>
+        paceOptions = {
+            ajax: {ignoreURLs: [/config.json/]}
+        }
+    </script>
+    <script type="text/javascript" src="lib/js/pace.js"></script>
+    <!-- git loader & error -->
+    <script type="text/javascript" src="lib/js/git-loader.js"></script>
+    <script type="text/javascript" src="lib/js/git-error.js"></script>
+    <!-- main css -->
+    <link href="lib/css/main.css" rel="stylesheet" type="text/css">
+    <script>
+        $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+            options.async = true;
+            options.cache = false;
+        });
+    </script>
+    <!-- mustache.js --->
+    <script src="lib/js/mustache.js"></script>
+    <!-- git-blog --->
+    <script type="text/javascript" src="/lib/src/js/git.js"></script>
+    <script type="text/javascript" src="/lib/src/js/injector.js"></script>
+    <script type="text/javascript" src="/lib/src/js/git.storage.js"></script>
+    <script type="text/javascript" src="/lib/src/js/git.config.js"></script>
+    <script type="text/javascript" src="/lib/src/js/git.lazy.js"></script>
+    <script type="text/javascript" src="/lib/src/js/git.helpers.js"></script>
+    <script type="text/javascript" src="/lib/src/js/git.page.js"></script>
+    <script type="text/javascript" src="/lib/src/js/git.router.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var Lazy = git("Lazy");
+    document.title = git("Config").site.title;
+    Lazy("head.html", function (template, render, git) {
+        $("head").append(render(template, git.Config));
+    });
+    Lazy("header.html", function (template, render, git) {
+        $("body [owner='header']").append(render(template, git.Config));
+    });
+    Lazy("footer.html", function (template, render, git) {
+        $("body [owner='footer']").append(render(template, git.Config));
+    });
+</script>
+<tpl owner="header"></tpl>
+<tpl owner="main"></tpl>
+<tpl owner="footer"></tpl>
+</body>
+</html>

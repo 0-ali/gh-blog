@@ -1,0 +1,27 @@
+{
+  "site": {
+    "include": {
+      "git": "/lib/src/js/",
+      "html": "/layouts/"
+    },
+    "template": {
+      "name": "default",
+      "path": "/template/default/"
+    },
+    "pages": [
+      "about",
+      "terms"
+    ],
+    "title": "Mohammed's blog",
+    "description": "Single-Page Applications (SPAs) Blog",
+    "baseurl": "https://xc0d3rz.github.io/gh-blog",
+    "copytights": "Mohammed's blog"
+  },
+  "posts": {
+    "api": "https://api.github.com/repos/xc0d3rz/tests/contents/_tt"
+  },
+  "pages": {
+    "url": "/_pages/",
+    "title": "|"
+  }
+}
