@@ -1,12 +1,12 @@
 {
   "site": {
     "include": {
-      "git": "/lib/src/js/",
-      "html": "/layouts/"
+      "git": "lib/src/js/",
+      "html": "layouts/"
     },
     "template": {
       "name": "default",
-      "path": "/template/default/"
+      "path": "template/default/"
     },
     "pages": [
       "about",
